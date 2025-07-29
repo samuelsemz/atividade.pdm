@@ -1,0 +1,52 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+
+  String nome = 'Samuel';
+  int idade = 19;
+  double altura = 1.80;
+  bool estudaFlutter = true;
+
+  if (idade >= 18) {
+    print('O aluno é maior de idade.');
+  } else {
+    print('O aluno é menor de idade.');
+  }
+
+  String apresentacao = apresentarAluno(nome, idade, estudaFlutter);
+  print(apresentacao);
+
+  List<String> linguagens = ['Java', 'JavaScript', 'Python'];
+  Map<String, int> materiasEstudadas = {
+    'Banco de Dados': 50,
+    'Linguagem de Programação para Web': 35,
+    'Redes de Computadores': 25,
+  };
+
+  print('Altura: $altura');
+  print('Estuda Flutter? $estudaFlutter');
+  print('Linguagens favoritas: $linguagens');
+  print('Matérias e horas estudadas: $materiasEstudadas');
+}
+
+String apresentarAluno(String nome, int idade, bool estudaFlutter) {
+  return 'Olá, meu nome é $nome, tenho $idade anos e estou aprendendo Flutter: $estudaFlutter';
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Exemplo Flutter',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Exemplo Flutter'),
+        ),
+        body: Center(
+          child: Text('Verifique o console para a saída de Samuel.'),
+        ),
+      ),
+    );
+  }
+}
